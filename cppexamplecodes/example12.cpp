@@ -55,10 +55,18 @@ class rect:public shape
 		{
 			return length*breadth;
 		}
+		//
+		//friend function
+		friend float GetLength(rect r);
 };
 rect::~rect()
 {
 	cout << "rect destructor" << endl;
+}
+//
+float GetLength(rect r)
+{
+	return r.length;
 }
 
 int main()
@@ -67,6 +75,8 @@ int main()
 	rect r(3,4);
 	cout << "square area = " << sq.area() << endl;
 	cout << "rect area = " << r.area() << endl;
+	
+	cout << "The length of rect = " << GetLength(r) << endl;
 
 	return 0;
 }
